@@ -40,6 +40,7 @@ jobs:
        server: ftp.asgarbabayev.com
        username: ${{ secrets.FTP_USERNAME }}
        password: ${{ secrets.FTP_PASSWORD }}
+       git-ftp-args: --insecure 
        protocol: ftps
      
 
