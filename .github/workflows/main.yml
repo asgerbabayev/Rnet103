@@ -35,12 +35,13 @@ jobs:
     steps:
 
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.4
       with:
        server: ftp.asgarbabayev.com
        username: ${{ secrets.FTP_USERNAME }}
        password: ${{ secrets.FTP_PASSWORD }}
-       protocol: ftp
+       protocol: ftps
+       git-ftp-args: --insecure 
      
 
   
