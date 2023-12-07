@@ -26,6 +26,18 @@ jobs:
     - name: Build
       run: dotnet build
 
+    - name: Publish
+      run: dotnet publish -c Release
+
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: httpdocs
+        git-ftp-args: --insecure
+
       
 
   
