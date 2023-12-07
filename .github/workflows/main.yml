@@ -41,7 +41,6 @@ jobs:
        local-dir: WebApplication1/bin/Release/net7.0/publish/
        server-dir: ./httpdocs/
        protocol: ftps
-       git-ftp-args: --insecure 
      
 
   
