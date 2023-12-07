@@ -26,16 +26,20 @@ jobs:
     - name: Build
       run: dotnet build
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
     - name: Publish
       run: dotnet publish -c Release
 
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
        server: ${{ secrets.FTP_SERVER }}
        username: ${{ secrets.FTP_USERNAME }}
        password: ${{ secrets.FTP_PASSWORD }}
-       local-dir: /httpdocs
+       local-dir: /
        git-ftp-args: --insecure
       
 
