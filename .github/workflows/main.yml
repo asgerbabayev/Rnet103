@@ -35,7 +35,7 @@ jobs:
     steps:
 
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@4.3.4
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
        server: ftp.asgarbabayev.com
        username: ${{ secrets.FTP_USERNAME }}
