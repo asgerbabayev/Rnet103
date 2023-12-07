@@ -41,6 +41,8 @@ jobs:
        username: ${{ secrets.FTP_USERNAME }}
        password: ${{ secrets.FTP_PASSWORD }}
        server-dir: 	./httpdocs/
+       protocol: ftps
+       git-ftp-args: --insecure
      
 
   
